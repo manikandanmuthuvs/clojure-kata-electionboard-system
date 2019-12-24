@@ -6,7 +6,7 @@
    )
  )
 
-(facts "citizen nomites as contender"
+(facts "citizen nominates as contender"
        (fact "citizen with age greather than Or equal to voting age should be able to nominate as Contender"
              (def citizen1 (create-citizen "manikandnan" "muthu" 18 "citizen1@test.com"))
              (def contender1 (create-contender citizen1))   
