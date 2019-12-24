@@ -1,5 +1,8 @@
-(ns eboard-testutils.data
-  (:require [eboard-domain.Domain :refer :all]))
+(ns eboard-testutils.test-data
+  (:require [eboard-domain.Domain :refer :all]
+            [eboard-usecase.citizen-usecase-impl :refer :all]
+   )
+)
 
 (import java.util.UUID)
 (import java.text.DateFormat)
@@ -18,8 +21,18 @@
                  :createdAt currentDateTime
                  :updatedAt currentDateTime}))
 
+(defn create-citizen-usecase []
+  (map->CitizenUsecaseImpl {})
+)
+;(defn create-repository []
+;  (map->EboardRepositoryImpl {})
+;)
 (defn create-contender [citizen] 
   (map->Contender {:id (.toString (java.util.UUID/randomUUID)) 
                    :contender citizen
                    :createdAt currentDateTime
                    :updatedAt currentDateTime}))
+
+;(defn create-manifesto [ideas]
+;  (map->Manifesto {:ideas ideas})
+; )
