@@ -5,10 +5,6 @@
            )
  )
 
-(defn create-repository []
-    (map->EboardRepositoryImpl {})
- )
-
 (def eboardRepository (create-repository))
 
 (def MAX_VOTING_AGE 18)
@@ -21,8 +17,8 @@
          	 (create eboardRepository contender)	 
        )        
 	  )
-    (citizen-gets-contender-by [_ contenderId]    
-      (find-by eboardRepository (str ":" contenderId))
+    (citizen-gets-contender-by [_ contender-id]    
+      (find-by eboardRepository contender-id)
 	  )
 )
 

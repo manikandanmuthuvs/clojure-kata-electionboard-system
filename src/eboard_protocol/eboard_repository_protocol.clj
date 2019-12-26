@@ -2,7 +2,7 @@
 
 (defprotocol EBoardRepository
   (create [_ contender])
-;  (post [contenderId manifesto])
+  (post [_ contender-id manifesto])
   (find-by [_ contenderId])
   ;(get-repository [])
 )
